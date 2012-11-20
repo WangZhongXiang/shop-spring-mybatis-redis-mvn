@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huawei.shop.repository.AdminMapper">
+	
+	<resultMap id="AdminMap" type="AdminTable" >
+		<id property="name" column="AD_NAME"></id>
+		<id property="password" column="AD_PASSWORD"></id>
+	</resultMap>
+	
+	<select id="getUserPassword" parameterType="String" resultMap="AdminMap"> select
+		AD_NAME, AD_PASSWORD from ADMIN where AD_NAME=#{name}  </select>
+</mapper>
